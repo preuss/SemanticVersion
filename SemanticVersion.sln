@@ -1,14 +1,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BE8D7B4B-92E3-46C8-9248-621571D4E621}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BE9C281E-797C-40C5-A97D-323D4F578D5B}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		appveyor.yml = appveyor.yml
 		RangeSpecification.md = RangeSpecification.md
 		README.md = README.md
+		SemVer_2.1_EBNF.md = SemVer_2.1_EBNF.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticVersion", "src\SemanticVersion\SemanticVersion.csproj", "{FE18B578-EB5D-46DC-B5D6-DC985CA84678}"

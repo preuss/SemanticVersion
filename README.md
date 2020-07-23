@@ -1,12 +1,4 @@
-# SemanticVersion.NET
-## AltaModa Build Results
-[![VSTS SemVer dev CI result badge](https://altamoda.visualstudio.com/_apis/public/build/definitions/0939118e-8ff6-4dd0-904f-67c3adf1aae6/3/badge)](https://altamoda.visualstudio.com/SemanticVersion/_Build/?definitionId=3 "CI build definition")
-[![SemVer Cont Deploy result](https://altamoda.visualstudio.com/_apis/public/build/definitions/0939118e-8ff6-4dd0-904f-67c3adf1aae6/4/badge)](https://altamoda.visualstudio.com/SemanticVersion/_Build/?definitionId=4 "CD build definition")
-
-
-## Ruhrpottpatriot Build Results
-[![Ruhrpottpatriot dev status](https://ci.appveyor.com/api/projects/status/a1lsuyalpn9u51ot?svg=true)](https://ci.appveyor.com/project/Ruhrpottpatriot/semanticversion "Ruhrpot Patriot dev status")
-[![Ruhrpottpatriot master status](https://ci.appveyor.com/api/projects/status/a1lsuyalpn9u51ot/branch/master?svg=true)](https://ci.appveyor.com/project/Ruhrpottpatriot/semanticversion/branch/master "Ruhrpot Patriot master status")
+# SpecialSemanticVersion.NET
 
 
 ## Abstract
