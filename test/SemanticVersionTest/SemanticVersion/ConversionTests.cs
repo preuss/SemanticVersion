@@ -1,50 +1,44 @@
-﻿namespace SemanticVersionTest
-{
-    using System;
+﻿namespace SemanticVersionTest {
+	using System;
 
-    using SemVersion;
+	using SemVersion;
 
-    using Xunit;
+	using Xunit;
 
-    public class ConversionTests
-    {
-        [Fact]
-        public void Conversion()
-        {
-            System.Version dotNetVersion = new System.Version(1, 1, 1, 1);
+	public class ConversionTests {
+		[Fact]
+		public void Conversion() {
+			System.Version dotNetVersion = new System.Version(1, 1, 1, 1);
 
-            SemanticVersion version = (SemanticVersion)dotNetVersion;
+			SemanticVersion version = (SemanticVersion)dotNetVersion;
 
-            Assert.Equal(1, version.Major);
-            Assert.Equal(1, version.Minor);
-            Assert.Equal(1, version.Patch);
-            Assert.Equal(string.Empty, version.Prerelease);
-            Assert.Equal("1", version.Build);
-        }
+			Assert.Equal(1U, version.Major);
+			Assert.Equal(1U, version.Minor);
+			Assert.Equal(1U, version.Patch);
+			Assert.Equal(string.Empty, version.Release);
+			Assert.Equal("1", version.Build);
+		}
 
-        [Fact]
-        public void ConversionNoBuildNoRevision()
-        {
-            System.Version dotNetVersion = new System.Version(1, 1);
+		[Fact]
+		public void ConversionNoBuildNoRevision() {
+			System.Version dotNetVersion = new System.Version(1, 1);
 
-            SemanticVersion version = (SemanticVersion)dotNetVersion;
+			SemanticVersion version = (SemanticVersion)dotNetVersion;
 
-            Assert.Equal(1, version.Major);
-            Assert.Equal(1, version.Minor);
-            Assert.Equal(0, version.Patch);
-            Assert.Equal(string.Empty, version.Prerelease);
-            Assert.Equal(string.Empty, version.Build);
-        }
+			Assert.Equal(1U, version.Major);
+			Assert.Equal(1U, version.Minor);
+			Assert.Equal(0U, version.Patch);
+			Assert.Equal(string.Empty, version.Release);
+			Assert.Equal(string.Empty, version.Build);
+		}
 
-        [Fact]
-        public void ConversionNull()
-        {
-            System.Version dotNetVersion = null;
+		[Fact]
+		public void ConversionNull() {
+			System.Version dotNetVersion = null;
 
-            Assert.Throws<ArgumentNullException>(() =>
-            {
-                SemanticVersion version = (SemanticVersion)dotNetVersion;
-            });
-        }
-    }
+			Assert.Throws<ArgumentNullException>(() => {
+				SemanticVersion version = (SemanticVersion)dotNetVersion;
+			});
+		}
+	}
 }

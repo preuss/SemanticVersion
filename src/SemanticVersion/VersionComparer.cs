@@ -1,5 +1,6 @@
 ﻿namespace SemVersion {
 	using System.Collections.Generic;
+	using System.Diagnostics.Contracts;
 
 	/// <summary>Compares two <see cref="SemanticVersion"/> objects for equality.</summary>
 	public sealed class VersionComparer : IEqualityComparer<SemanticVersion>, IComparer<SemanticVersion> {
@@ -10,6 +11,11 @@
 
 		/// <inheritdoc/>
 		public int Compare(SemanticVersion left, SemanticVersion right) {
+			/*
+			if(left is null && right is null) {
+				return 0;
+			}
+			*/
 			if(left is null) {
 				return right is null ? 0 : -1;
 			}
@@ -17,6 +23,13 @@
 			if(right is null) {
 				return 1;
 			}
+			/*
+			if(object.ReferenceEquals(left, right)) {
+				return 0;
+			}
+			if(object.Equals(left, right)) {
+				return 0;
+			}*/
 
 			var majorComp = left.Major.CompareToBoxed(right.Major);
 			if(majorComp != 0) {
@@ -33,11 +46,12 @@
 				return patchComp;
 			}
 
-			return left.Prerelease.CompareComponent(right.Prerelease);
+			return left.Release.CompareComponent(right.Release);
 		}
 
 		/// <inheritdoc/>
 		public int GetHashCode(SemanticVersion obj) {
+			Contract.Requires(obj != null, "Not-Null Value");
 			return obj.GetHashCode();
 		}
 	}

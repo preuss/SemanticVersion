@@ -1,41 +1,36 @@
-﻿namespace SemanticVersionTest.Comparer
-{
-    using System;
+﻿namespace SemanticVersionTest.Comparer {
+	using System;
 
-    using SemVersion;
+	using SemVersion;
 
-    using Xunit;
+	using Xunit;
 
-    public class EqualsTests
-    {
-        [Fact]
-        public void Verify_ReferenceEquals()
-        {
-            SemanticVersion version = new SemanticVersion(1, 0, 0);
-            
-            VersionComparer comparer = new VersionComparer();
+	public class EqualsTests {
+		[Fact]
+		public void Verify_ReferenceEquals() {
+			SemanticVersion version = new SemanticVersion(1, 0, 0);
 
-            Assert.True(comparer.Equals(version, version));
-        }
+			VersionComparer comparer = new VersionComparer();
 
-        [Fact]
-        public void ReferenceEqualsLeftNull()
-        {
-            SemanticVersion version = new SemanticVersion(1, 0, 0);
+			Assert.True(comparer.Equals(version, version));
+		}
 
-            VersionComparer comparer = new VersionComparer();
+		[Fact]
+		public void ReferenceEqualsLeftNull() {
+			SemanticVersion version = new SemanticVersion(1, 0, 0);
 
-            Assert.False(comparer.Equals(null, version));
-        }
+			VersionComparer comparer = new VersionComparer();
 
-        [Fact]
-        public void ReferenceEqualsRightNull()
-        {
-            SemanticVersion version = new SemanticVersion(1, 0, 0);
+			Assert.False(comparer.Equals(null, version));
+		}
 
-            VersionComparer comparer = new VersionComparer();
+		[Fact]
+		public void ReferenceEqualsRightNull() {
+			SemanticVersion version = new SemanticVersion(1, 0, 0);
 
-            Assert.False(comparer.Equals(version, null));
-        }
-    }
+			VersionComparer comparer = new VersionComparer();
+
+			Assert.False(comparer.Equals(version, null));
+		}
+	}
 }

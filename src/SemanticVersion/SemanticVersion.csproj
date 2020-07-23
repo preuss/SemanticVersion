@@ -1,40 +1,50 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <Description>A portable semantic version class library compliant with the 2.0 SemanticVersion standard (http://semver.org) </Description>
-    <AssemblyTitle>Semantic Version .NET</AssemblyTitle>
-    <VersionPrefix>1.2</VersionPrefix>
-    <Authors>Robert Logiewa; AltaModa Technologies</Authors>
-    <AssemblyName>SemanticVersion</AssemblyName>
-    <PackageId>SemanticVersion</PackageId>
-    <PackageTags>SemanticVersion;Semantic Version</PackageTags>
-    <PackageProjectUrl>https://github.com/Ruhrpottpatriot/SemanticVersion</PackageProjectUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.1</Version>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryUrl>https://github.com/Ruhrpottpatriot/SemanticVersion</RepositoryUrl>
-    <RepositoryType>GIT</RepositoryType>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>SemanticVersion.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<Description>A portable semantic version class library compliant with the 2.0 SemanticVersion standard (http://semver.org) </Description>
+		<AssemblyTitle>Semantic Version .NET</AssemblyTitle>
+		<VersionPrefix>2.0</VersionPrefix>
+		<Authors>Robert Logiewa; AltaModa Technologies</Authors>
+		<AssemblyName>SemanticVersion</AssemblyName>
+		<PackageId>SemanticVersion</PackageId>
+		<PackageTags>SemanticVersion;Semantic Version</PackageTags>
+		<PackageProjectUrl>https://github.com/preuss/SemanticVersion</PackageProjectUrl>
+		<PackageLicenseUrl></PackageLicenseUrl>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>3.0</Version>
+		<AssemblyVersion>3.0.0.0</AssemblyVersion>
+		<FileVersion>3.0.0.0</FileVersion>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<RepositoryUrl>https://github.com/preuss/SemanticVersion</RepositoryUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>anticVersion\SemanticVersion.pfx</AssemblyOriginatorKeyFile>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
 
-  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
-      <TargetFrameworks>netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6;netstandard2.0;netstandard2.1;net452;net46;net461;net462</TargetFrameworks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
-      <TargetFrameworks>netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6;netstandard2.0;netstandard2.1</TargetFrameworks>
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.0;netcoreapp3.1;net48</TargetFrameworks>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
+		<TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
+	</PropertyGroup>
 
-  <ItemGroup><!-- empty; just used for testing VSTS auto-triggered builds -->
-  
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<!-- empty; just used for testing VSTS auto-triggered builds -->
 
+		<None Include="..\..\.editorconfig" Link=".editorconfig" />
+
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 </Project>

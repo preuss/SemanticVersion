@@ -4,7 +4,9 @@
 	using System.Linq;
 	using System.Linq.Expressions;
 
-	/// <summary>Provides methods to parse a string into an appropriate <see cref="Expression"/> tree or <see cref="Func{T,TResult}"/></summary>
+	/// <summary>
+	/// Provides methods to parse a string into an appropriate <see cref="Expression"/> tree or <see cref="Func{T,TResult}"/>
+	/// </summary>
 	public class RangeParser {
 		private readonly Stack<Expression> expressionStack = new Stack<Expression>();
 		private readonly Stack<Symbol> operatorStack = new Stack<Symbol>();
