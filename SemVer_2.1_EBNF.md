@@ -12,11 +12,11 @@ It is compatible with SemVer 2.0
 
 <version core> ::= <major> ( <dot> <minor> ( <dot> <patch> )? )?
 
-<major> ::= <numeric identifier>
+<major> ::= <numeric identifier> ;
 
-<minor> ::= <numeric identifier>
+<minor> ::= <numeric identifier> ;
 
-<patch> ::= <numeric identifier>
+<patch> ::= <numeric identifier> ;
 
 <release> ::= <release identifier> ( <dot> <release identifier> )* ;
 
@@ -67,7 +67,7 @@ It is compatible with SemVer 2.0
 <danish extra letter> ::=  "æ" | "ø" | "å" 
                          | "Æ" | "Ø" | "Å" ;
 
-<ascii letter> ::= "a".."z" 
-                 | "A".."Z" ;
+<ascii letter> ::= [a-z] 
+                 | [A-Z] ;
 
 ```
